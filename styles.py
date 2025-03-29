@@ -14,14 +14,30 @@ def get_css():
             font-family: 'Titillium Web', sans-serif !important;
         }
 
+        /* Force light mode for the entire app */
+        html, body, [class*="css"] {
+            color: #333 !important;
+            background-color: white !important;
+        }
+        
         /* Main app container - enforce light mode */
         .stApp {
             background-color: #ffffff !important;
         }
 
         /* Streamlit containers */
-        .css-1d391kg, .css-12oz5g7, .css-1r6slb0, .css-keje6w {
+        .css-1d391kg, .css-12oz5g7, .css-1r6slb0, .css-keje6w, .st-emotion-cache-1r6slb0 {
             background-color: #ffffff !important;
+        }
+        
+        /* Dark mode overrides - reset any dark mode styling */
+        [data-testid="stAppViewContainer"] {
+            background-color: #ffffff !important;
+        }
+        
+        /* Ensure sidebar is in light mode */
+        [data-testid="stSidebar"] {
+            background-color: #f8f9fa !important;
         }
 
         /* Header styling */
@@ -64,6 +80,12 @@ def get_css():
             border-radius: 8px !important;
             overflow: hidden !important;
         }
+        
+        /* Style for data editor in light mode */
+        [data-testid="stDataEditor"] {
+            background-color: #ffffff !important;
+            border: 1px solid #e0e0e0 !important;
+        }
 
         /* Style for table headers */
         .stDataFrame thead tr th, .stTable thead tr th {
@@ -81,6 +103,12 @@ def get_css():
             border-bottom: 1px solid #e0e0e0 !important;
             padding: 8px !important;
         }
+        
+        /* Style for editable cells */
+        .stDataEditor-cell {
+            color: #333333 !important;
+            background-color: #ffffff !important;
+        }
 
         /* Alternating row colors for better readability */
         .stDataFrame tbody tr:nth-child(even) td {
@@ -95,6 +123,19 @@ def get_css():
         /* Text color overrides */
         p, span, div, h1, h2, h3, h4, h5, h6 {
             color: #333333 !important;
+        }
+        
+        /* Light mode tabs */
+        .stTabs [data-baseweb="tab-list"] {
+            background-color: #f8f9fa !important;
+        }
+        
+        .stTabs [data-baseweb="tab"] {
+            color: #333333 !important;
+        }
+        
+        .stTabs [data-baseweb="tab-highlight"] {
+            background-color: #658c68 !important;
         }
 
         /* Streamlit button styling */
@@ -112,9 +153,23 @@ def get_css():
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
         }
 
+        /* Success message styling */
+        .element-container div[data-testid="stAlert"] {
+            background-color: #d4edda !important;
+            color: #155724 !important;
+            border: 1px solid #c3e6cb !important;
+            padding: 10px !important;
+            border-radius: 6px !important;
+        }
+
         /* Spinner color */
         .stSpinner > div > div > div {
             border-color: #658c68 transparent transparent !important;
+        }
+        
+        /* Toggle button styling */
+        [data-testid="stToggle"] {
+            color: #658c68 !important;
         }
 
         /* Streamlit warning message styling */
