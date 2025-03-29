@@ -8,13 +8,8 @@ from styles import get_css, main_header, section_header, custom_container
 # Set page configuration - MUST BE THE FIRST STREAMLIT COMMAND
 st.set_page_config(
     page_title="BD_PRODUCCIÓN (2025)",
-    page_icon="📊",
     layout="wide",
     initial_sidebar_state="collapsed",
-    # Force light theme
-    menu_items={
-        'Theme': 'light'
-    }
 )
 
 # Set up logging to debug data loading issues
